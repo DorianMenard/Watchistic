@@ -211,6 +211,10 @@ public class Custom_Watch extends AppCompatActivity {
                 Intent intent = new Intent(Custom_Watch.this, stats.class);
                 startActivity(intent);
                 return true;
+            case R.id.item3:
+                Intent intenté = new Intent(Custom_Watch.this, Listemontres.class);
+                startActivity(intenté);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

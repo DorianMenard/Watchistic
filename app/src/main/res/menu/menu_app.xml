@@ -10,5 +10,9 @@
         android:title="Stats"
         app:showAsAction="never" />
 
+    <item android:id="@+id/item3"
+    android:title="Liste"
+    app:showAsAction="never" />
+
 
 </menu>

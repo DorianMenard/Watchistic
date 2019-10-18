@@ -1,29 +1,40 @@
 package com.example.watchistic;
 
-public class ModelMontre {
-    private int  Bracelet, Boitier, Cadran, Creator_id;
-    private double votesTotal;
-    private String Nom;
+import android.graphics.drawable.Drawable;
 
-    public int getCreator_id() {
+public class ModelMontre {
+    private Drawable Bracelet, Boitier, Cadran;
+    private double votesTotal;
+    private String Nom, Creator_id;
+
+    public ModelMontre(Drawable bracelet, Drawable boitier, Drawable cadran, String creator_id, double votesTotal, String nom) {
+        Bracelet = bracelet;
+        Boitier = boitier;
+        Cadran = cadran;
+        Creator_id = creator_id;
+        this.votesTotal = votesTotal;
+        Nom = nom;
+    }
+
+    public String getCreator_id() {
         return Creator_id;
     }
 
-    public void setCreator_id(int creator_id) {
+    public void setCreator_id(String creator_id) {
         Creator_id = creator_id;
     }
 
-    public int getBracelet() { return Bracelet; }
+    public Drawable getBracelet() { return Bracelet; }
 
-    public void setBracelet(int bracelet) { Bracelet = bracelet; }
+    public void setBracelet(Drawable bracelet) { Bracelet = bracelet; }
 
-    public int getBoitier() {  return Boitier;  }
+    public Drawable getBoitier() {  return Boitier;  }
 
-    public void setBoitier(int boitier) { Boitier = boitier; }
+    public void setBoitier(Drawable boitier) { Boitier = boitier; }
 
-    public int getCadran() { return Cadran; }
+    public Drawable getCadran() { return Cadran; }
 
-    public void setCadran(int cadran) { Cadran = cadran; }
+    public void setCadran(Drawable cadran) { Cadran = cadran; }
 
     public double getVotesTotal() {
         return votesTotal;
