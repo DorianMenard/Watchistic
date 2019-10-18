@@ -31,10 +31,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
         holder.Nom.setText(ListModels.get(position).getNom());
         holder.Votes.setText( Double.toString(ListModels.get(position).getVotesTotal()) );
-        holder.Creator.setText(Integer.toString(ListModels.get(position).getCreator_id())  );
-        holder.Cadran.setImageResource(ListModels.get(position).getCadran());
-        holder.Bracelet.setImageResource(ListModels.get(position).getBracelet());
-        holder.Boitier.setImageResource(ListModels.get(position).getBoitier());
+        holder.Creator.setText( ListModels.get(position).getCreator_id() );
+        holder.Cadran.setImageDrawable(ListModels.get(position).getCadran());
+        holder.Bracelet.setImageDrawable(ListModels.get(position).getBracelet());
+        holder.Boitier.setImageDrawable(ListModels.get(position).getBoitier());
     }
 
     @Override
