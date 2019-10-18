@@ -60,6 +60,7 @@ public class Custom_Watch extends AppCompatActivity {
     private int idCadran = 0;
 
     final List<String> list = new ArrayList<String>();
+    final List<String> list2 = new ArrayList<String>();
     final List<String> listCC = new ArrayList<String>();
     final List<String> listCS = new ArrayList<String>();
 
@@ -239,8 +240,10 @@ public class Custom_Watch extends AppCompatActivity {
                         System.out.println("ImagePath : " + image.getString("Image"));
                         String img = image.getString("Image");
                         String im = img.substring(17, (img.length() - 4));
+                        String name = image.getString("Nom");
                         //list.add(image.getString("Image"));
                         list.add(im);
+                        list2.add(name);
                     }
                     createAdapteur();
                 } catch (JSONException e) {
@@ -348,7 +351,7 @@ public class Custom_Watch extends AppCompatActivity {
 
     void createAdapteur() {
         Spinner spinnerCouleurBracelet = (Spinner) findViewById(R.id.spinnerCouleurBracelet);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list2);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCouleurBracelet.setAdapter(dataAdapter);
 
@@ -361,8 +364,8 @@ public class Custom_Watch extends AppCompatActivity {
                 //CouleurBracelet = list.get(position);
 
                 try {
-                    Log.d("ASSET","Bracelet/Cuir/" + CouleurBracelet + ".png");
-                    InputStream imsS = getAssets().open("Bracelet/" + CouleurBracelet + ".png");
+                    Log.d("ASSET","Bracelet/Cuir/" + list.get(position) + ".png");
+                    InputStream imsS = getAssets().open("Bracelet/" + list.get(position) + ".png");
 
                     Drawable dS = Drawable.createFromStream(imsS, null);
                     imvBracelet.setImageDrawable(dS);
